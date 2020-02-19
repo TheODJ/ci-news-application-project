@@ -12,12 +12,11 @@
 
 			$this->load->view('Templates/header',$data);
 			$this->load->view('news/index',$data);
-			$this->load->view('Templates/footer');
+			$this->load->view('Templates/footer',$data);
 		}
 
 		public function view($slug=NULL){
 			$data['news_item'] = $this->news_model->get_news($slug);
-
 	        if (empty($data['news_item']))
 	        {
 	                show_404();
